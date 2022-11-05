@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.example.demo.entity.Course;
 import com.example.demo.service.CourseService;
 
+import io.swagger.annotations.ApiOperation;
 import lombok.AllArgsConstructor;
 
 @RequestMapping("/courses")
@@ -23,24 +24,28 @@ public class CourseController {
 	
 	private CourseService courseService;
 	
+	@ApiOperation(value = "fetch all courses")
 	@GetMapping
 	public ResponseEntity<List<Course>> getAllCourses() {
 		
 		return ResponseEntity.ok(courseService.findAllCourses());
 	}
 	
+	@ApiOperation(value = "fetch a course by ID")
 	@GetMapping("/{courseId}")
 	public ResponseEntity<Course> getCourseById (@PathVariable Long courseId) {
 		
 		return ResponseEntity.ok(courseService.findCourseById(courseId));
 	}
 	
+	@ApiOperation(value = "fetch a list of courses with same topic")
 	@GetMapping("/queue/{way}")
 	public ResponseEntity<List<Course>> getCoursesByWay(@PathVariable String way) {
 		
 		return ResponseEntity.ok(courseService.findCourseByWay(way));
 	}
 	
+	@ApiOperation(value = "create a course")
 	@PostMapping
 	public ResponseEntity<Course> saveCourse(@RequestBody Course course) {
 		
