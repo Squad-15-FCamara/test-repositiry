@@ -42,4 +42,8 @@ public class CourseService {
 		return courseRepository.findByWay(way);
 	}
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/main

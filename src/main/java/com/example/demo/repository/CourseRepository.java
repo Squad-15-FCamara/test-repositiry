@@ -9,4 +9,8 @@ public interface CourseRepository extends JpaRepository<Course, Long> {
 	
 	public List<Course> findByWay(String way);
 	
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> refs/remotes/origin/main
