@@ -1,0 +1,17 @@
+package com.example.demo.service;
+
+import org.springframework.stereotype.Service;
+
+import com.example.demo.repository.ClassRepository;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+
+@Service
+@Data
+@AllArgsConstructor
+public class ClassService {
+	
+	private ClassRepository classRepository;
+	
+}
