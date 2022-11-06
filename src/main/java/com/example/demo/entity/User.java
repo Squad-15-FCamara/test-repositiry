@@ -6,6 +6,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -16,23 +17,27 @@ import lombok.NoArgsConstructor;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Table
-public class Course {
+@Entity
+public class User {
 	
 	@Id
 	@EqualsAndHashCode.Include
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	@Column(name = "idCourse")
+	@Column(name = "idUser")
 	private Long id;
 	
 	@Column
 	private String name;
 	
 	@Column
-	private String subject;
+	@Email
+	private String email;
 	
 	@Column
-	private String way;
+	private String actualJob;
+	
+	@Column
+	private Boolean isAdmin;
 	
 }

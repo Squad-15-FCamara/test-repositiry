@@ -42,4 +42,9 @@ public class CourseService {
 		return courseRepository.findByWay(way);
 	}
 	
+	public void deleteCourseById(Long courseId) {
+		
+		courseRepository.deleteById(courseId);
+	}
+	
 }
